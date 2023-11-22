@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" >
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        <!-- stroke: #000; -->
+        stroke-miterlimit: 3;
+        <!-- stroke-width: 5px; -->
+      }
+    </style>
+  </defs>
+<rect class="cls-1" x="11" y="38.5" width="110" height="82.5" rx="11" ry="11"></rect>
+<polyline class="cls-1" points="93.5 11 66 38.5 38.5 11"></polyline>
+</svg>

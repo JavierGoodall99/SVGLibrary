@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-miterlimit: 3;
+      }
+    </style>
+  </defs>
+<ellipse class="cls-1" cx="72" cy="30" rx="54" ry="18"></ellipse>
+<path class="cls-1" d="M126 72c0 9.96-24 18-54 18s-54-8.04-54-18"></path>
+<path class="cls-1" d="M18 30v84c0 9.96 24 18 54 18s54-8.04 54-18V30"></path>
+</svg>

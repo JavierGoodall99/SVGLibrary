@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+nav {
+  background: linear-gradient(to bottom, #006098, #00A7DB);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* .heading {
+  background: linear-gradient(to bottom, #006098, #00A7DB);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 100px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+    color: white;
+  } */
+
+/* SideBar */
+.sidenav {
+    width: 80%;
+    height: 25vh;
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  
+  .container {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  label, .label {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  /* Side Bar Content */
+input[type="color"] {
+    border-radius: 9px;
+    width: 100px;
+    margin-bottom: 30px;
+    padding: 4px;
+    border: none;
+    /* background: linear-gradient(to bottom, #006098, #00A7DB);
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  
+  input[type="checkbox"]{
+    margin-bottom: 30px;
+  }
+  
+  input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    height: 12px; /* Set the height of the slider */
+    background: linear-gradient(to bottom, #006098, #00A7DB);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px; /* Set the border radius */
+    outline: none; /* Remove the default outline */
+    width: 200px;
+    margin-bottom: 30px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 16px; /* Set the width of the thumb */
+    height: 16px; /* Set the height of the thumb */
+    background: #000000; /* Set the color of the thumb */
+    border-radius: 50%; /* Set the border radius to create a circle */
+    cursor: pointer; /* Set cursor style on hover */
+  }
+
+
+
+
+  .search {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .search input {
+    padding: 10px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 430px;
+  }
+  
+.grow{
+  z-index: 0;
+}
+
+  .slider .ms-Slider-thumb {
+    background-color: white;
+  }
+
+  .slider .ms-Slider-active {
+    background-color: #006098
+  }
+
+  /* .checkbox {
+    box-shadow: #000000;
+  } */

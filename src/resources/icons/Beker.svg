@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-miterlimit: 3;
+      }
+    </style>
+  </defs>
+<path class="cls-1"  d="M108 48h6a24 24 0 0 1 0 48h-6"></path>
+<path class="cls-1"  d="M12 48h96v54a24 24 0 0 1-24 24H36a24 24 0 0 1-24-24V48z"></path>
+<line class="cls-1"  x1="36" y1="6" x2="36" y2="24"></line>
+<line class="cls-1"  x1="60" y1="6" x2="60" y2="24"></line>
+<line class="cls-1"  x1="84" y1="6" x2="84" y2="24"></line>
+</svg>

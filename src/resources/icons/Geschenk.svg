@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-miterlimit: 3;
+      }
+    </style>
+  </defs>
+  <polyline class="cls-1"  points="120 72 120 132 24 132 24 72"></polyline>
+  <rect class="cls-1"  x="12" y="42" width="120" height="30"></rect>
+  <path class="cls-1"  d="M72 42H45a15 15 0 0 1 0-30C66 12 72 42 72 42z"></path>
+  <path class="cls-1"  d="M72 42h27a15 15 0 0 0 0-30C78 12 72 42 72 42z"></path>
+</svg>

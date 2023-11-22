@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Widget</title>
+</head>
+<body>
+  <!-- Embeddable widget script -->
+  <script src="/dist/widget.js"></script>
+
+  <!-- Place the widget wherever you want it to appear -->
+  <div id="embeddable-widget"></div>
+
+  <!-- JavaScript code to mount the widget -->
+  <script>
+    // Function to mount the widget
+    function mountWidget() {
+      EmbeddableWidget.mount(document.getElementById('embeddable-widget'));
+    }
+
+    // Call the mount function when the DOM is ready
+    document.addEventListener('DOMContentLoaded', mountWidget);
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "icons": [
+    {
+      "name": "Camera",
+      "path": "icons\\Camera.svg",
+      "category": ""
+    },
+    {
+      "name": "Gebruiker",
+      "path": "icons\\Gebruiker.svg",
+      "category": ""
+    },
+    {
+      "name": "Prijs",
+      "path": "icons\\Prijs.svg",
+      "category": ""
+    },
+    {
+      "name": "Schild",
+      "path": "icons\\Schild.svg",
+      "category": "Technology"
+    },
+    {
+      "name": "Telefoongesprek",
+      "path": "icons\\Telefoongesprek.svg",
+      "category": ""
+    },
+    {
+      "name": "Televisie",
+      "path": "icons\\Televisie.svg",
+      "category": ""
+    },
+    {
+      "name": "Wijzende-vinger",
+      "path": "icons\\Wijzende-vinger.svg",
+      "category": "Home"
+    },
+    {
+      "name": "Zoek",
+      "path": "icons\\Zoek.svg",
+      "category": ""
+    }
+  ]
+}
