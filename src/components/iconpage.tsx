@@ -12,9 +12,9 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
   const [secondaryColor, setSecondaryColor] = useState<string>("#00A7DB"); // Initial secondary color
   const [gradient, setGradient] = useState(false);
   const id = useId();
-  const [category, setCategory] = useState<string>("all"); // Initial category
+  const [category] = useState<string>("all"); // Initial category
 
-// Category Filter
+  // Category Filter
   const categoryFilter = (iconName: string) => {
     if (category === "all") {
       return true;
@@ -23,15 +23,16 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
     const parser = new DOMParser();
     const svgDoc = parser.parseFromString(svgData, "image/svg+xml");
     const categoryElements = svgDoc.querySelectorAll("metadata > category");
-  
+
     for (let i = 0; i < categoryElements.length; i++) {
       const iconCategory = categoryElements[i].textContent;
       if (iconCategory === category) {
         return true;
-      }}
-    return false; 
+      }
+    }
+    return false;
   };
-  
+
   // DOWNLOAD AS PNG OR SVG
   const handleDownloadSVG = (iconName: string) => {
     const svgData = icons[iconName];
@@ -40,10 +41,7 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
     const svgElement = svgDoc.documentElement;
 
     if (gradient) {
-      const linearGradient = svgDoc.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "linearGradient"
-      );
+      const linearGradient = svgDoc.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
       linearGradient.setAttribute("id", `gradient-${iconName}`);
       linearGradient.innerHTML = `
         <stop offset="0%" stop-color="${secondaryColor}" />
@@ -157,7 +155,7 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
   return (
     <div>
       <div className="search">
-        <select
+        {/* <select
           className="m-5 p-3 text-lg bg-white border border-gray-300 rounded-lg shadow-md focus:outline-none focus:border-blue-500"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -165,12 +163,11 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
           <option value="all" className="text-gray-500">Alle Categorieën</option>
           <option value="Technology" className="text-gray-500">Technology</option>
           <option value="Home" className="text-gray-500">Home</option>
-          {/* Add more options for each category */}
-        </select>
+        </select> */}
 
         <input
           type="text"
-          placeholder="Zoek iconen"
+          placeholder="Search Icons"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="text-lg"
@@ -182,23 +179,23 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
             <div className="container">
               <label htmlFor="primaryColor"></label>
               <label htmlFor="primaryColor">
-                {gradient ? "Kies een kleur " : "Kies een kleur "}
+                {gradient ? "Pick a Color " : "Pick a Color "}
               </label>
-              <input type="color" value={primaryColor} onChange={handlePrimaryColorChange}/>
+              <input type="color" value={primaryColor} onChange={handlePrimaryColorChange} />
               {gradient && (
                 <>
-                  <label htmlFor="secondaryColor">Tweede kleur</label>
+                  <label htmlFor="secondaryColor">Second Color</label>
                   <input type="color" value={secondaryColor} onChange={handleSecondaryColorChange} />
                 </>
               )}
 
-              <label htmlFor="isGradient">Vink voor Verloop aan</label>
+              <label htmlFor="isGradient">Tick for Gradient</label>
               <input
                 type="checkbox"
                 onChange={() => setGradient(!gradient)}
                 id="isGradient"
               />
-              <Label className="label" htmlFor={id}>Maat</Label>
+              <Label className="label" htmlFor={id}>Size</Label>
               <Slider
                 value={size}
                 min={20}
@@ -208,7 +205,7 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
                 className="slider"
               />
 
-              <Label className="label" htmlFor={id}>Streekbreedte</Label>
+              <Label className="label" htmlFor={id}>Stroke Width</Label>
               <Slider
                 value={swidth}
                 min={1}
@@ -231,7 +228,7 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
               }
 
               if (!categoryFilter(iconName)) {
-                return null; 
+                return null;
               }
 
               return (
@@ -241,15 +238,15 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
                       <h6 className="text-xs text-center">{iconName}</h6>
                       <br />
                       <div className="m-auto"
-                        style={{width: `${size}px`, height: `${size}px` }}>
+                        style={{ width: `${size}px`, height: `${size}px` }}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          style={{ width: "100%", height: "100%"}}>
+                          style={{ width: "100%", height: "100%" }}>
                           <defs>
                             <linearGradient id={`gradient-${iconName}`}>
                               <stop
                                 offset="0%"
-                                stopColor={gradient ? secondaryColor : primaryColor }
+                                stopColor={gradient ? secondaryColor : primaryColor}
                               />
                               <stop offset="100%" stopColor={primaryColor} />
                             </linearGradient>
@@ -274,13 +271,13 @@ export const IconPage = ({ icons }: { icons: { [key: string]: string } }) => {
                       </div>
 
                       <button
-                        className="p-1 rounded-md cursor-pointer group-hover:block hidden border-2 border-white bg-black text-xs  text-white absolute bottom-0 right-0 m-2"
+                        className="bg p-1 rounded-md cursor-pointer group-hover:block hidden border-2 border-white bg-black text-xs  text-white absolute bottom-0 right-0 m-2"
                         onClick={() => handleDownloadSVG(iconName)}
                       >SVG
                       </button>
                       <br />
                       <button
-                        className="p-1 rounded-md cursor-pointer group-hover:block hidden border-2 border-white bg-black text-xs text-white absolute bottom-0 right-10 m-2"
+                        className="bg p-1 rounded-md cursor-pointer group-hover:block hidden border-2 border-white bg-black text-xs text-white absolute bottom-0 right-10 m-2"
                         onClick={() => handleDownloadPNG(iconName)}
                       > PNG
                       </button>
