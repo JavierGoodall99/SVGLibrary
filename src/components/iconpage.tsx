@@ -129,7 +129,7 @@ const IconPage = (
           <AppHeader />
           <div className={styles.search}>
             <div className="m-3">
-              <Dropdown
+              {/* <Dropdown
                 size="large"
                 aria-labelledby={comboId}
                 placeholder="Alle Categorieën"
@@ -141,10 +141,11 @@ const IconPage = (
                     {option}
                   </Option>
                 ))}
-              </Dropdown>
+              </Dropdown> */}
             </div>
             <div className="m-3">
               <Input
+              className="w-96"
                 size="large"
                 placeholder="Zoek iconen"
                 value={searchQuery}
@@ -153,7 +154,7 @@ const IconPage = (
                 }) => setSearchQuery(ev.target.value)}
               />
             </div>
-            <div>
+            {/* <div>
               <FileDropdown onSelectFile={handleFileSelect} />
             </div>
 
@@ -171,7 +172,7 @@ const IconPage = (
                 padding={padding}
                 rotation={rotation}
               />
-            </div>
+            </div> */}
           </div>
 
           <div>
