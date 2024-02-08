@@ -1,0 +1,63 @@
+{
+  "Color": {
+    "name": "string",
+    "hex": "string",
+    "rgb": "string",
+    "hsl": "string"
+  },
+  "Stroke": {
+    "width": "number | \"auto\"",
+    "type": "\"solid\" | \"gradient\"",
+    "color": "string | string[]"
+  },
+  "Background": {
+    "enabled": "boolean",
+    "color": "string",
+    "radius": "number"
+  },
+  "Size": "number",
+  "Styles": {
+    "name": "string",
+    "default": "boolean",
+    "colors": [
+      {
+        "name": "string",
+        "hex": "string",
+        "rgb": "string",
+        "hsl": "string"
+      }
+    ],
+    "stroke": {
+      "width": "number",
+      "type": "string",
+      "color": "string[]"
+    },
+    "background": {
+      "enabled": "boolean",
+      "color": "string",
+      "radius": "number"
+    },
+    "size": "number"
+  },
+  "Profile": {
+    "name": "KnusWonen",
+    "size": 128,
+    "stroke": {
+      "width": 2,
+      "type": "solid"
+    },
+    "colors": [
+      {
+        "hex": "#12b437ff"
+      },
+      {
+        "hex": "#ff5733"
+      }
+    ],
+    "background": {
+      "enabled": false
+    },
+    "padding": 0,
+    "rotation": 60
+  }
+}

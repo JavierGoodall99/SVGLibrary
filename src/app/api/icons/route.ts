@@ -1,13 +1,12 @@
-import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import cheerio from "cheerio";
 
 interface Icons {
   [key: string]: {
     name: string;
     category: string[];
     icon: string;
-    style: string;
   };
 }
 
@@ -22,7 +21,6 @@ export async function GET(request: Request) {
 
   const icons: Icons = {};
 
-  console.log(fill, stroke);
 
   iconFiles.forEach((file) => {
     const iconName = file.replace('.svg', '');
@@ -35,28 +33,30 @@ export async function GET(request: Request) {
       category.replace(/<\/?category>/g, '')
     );
 
-    const styleMatch = iconContent.match(/<style>([\s\S]+?)<\/style>/);
-    const style = styleMatch ? styleMatch[1] : '';
 
     icons[iconName] = {
       name: iconName,
       category: categories || [],
       icon: iconContent,
-      style: style,
     };
   });
+  function replaceSVGStyle(svgString: string, newStyle: string): string {
+    const $ = cheerio.load(svgString, { xmlMode: true });
+    $("style").text(newStyle);
+    return $.xml();
+  }
 
   const iconJSON = Object.keys(icons).map((key) => {
     let iconString = icons[key].icon;
-    if (stroke !== null && fill !== null) {
-      // Apply your stroke and fill logic here
+
+    if (stroke !== null || fill !== null) {
+      iconString = replaceSVGStyle(iconString,`.cls-1 {fill: #${fill ? fill : "000000"};stroke-miterlimit: ${stroke ? stroke : "3"};}`);
     }
 
     return {
       name: icons[key].name,
       category: icons[key].category,
       icon: iconString,
-      style: icons[key].style,
     };
   });
 
