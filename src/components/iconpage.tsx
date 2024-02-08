@@ -25,7 +25,7 @@ import AppHeader from "./AppHeader/AppHeader";
 
 const setButtonText = (open: boolean, position: DrawerProps["position"]) => {
   const openIcon = <PaintBucket20Regular />;
-  const buttonText = "Aanpassen";
+  const buttonText = "Customize";
 
   const buttonContent = (
     <div>
