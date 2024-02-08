@@ -121,37 +121,67 @@ const IconPage = (
   }, []);
 
   return (
-    <FluentProvider theme={webLightTheme}>
-      {loading ? (
-        <CustomSpinner />
-      ) : (
-        <div>
-          <AppHeader />
-          <div className={styles.search}>
-            {/* <div className="m-3">
-              <Dropdown
-                size="large"
-                aria-labelledby={comboId}
-                placeholder="Alle Categorieën"
-                value={category}
-                {...props}
-              >
-                {options.map((option) => (
-                  <Option key={option} onClick={() => setCategory(option)}>
-                    {option}
-                  </Option>
-                ))}
-              </Dropdown>
-            </div> */}
-            <div className="m-3">
-              <Input
-                size="large"
-                className="w-96"
-                placeholder="Search icons"
-                value={searchQuery}
-                onChange={(ev: {
-                  target: { value: React.SetStateAction<string> };
-                }) => setSearchQuery(ev.target.value)}
+    <div>
+      <div className="search">
+        <select
+          className="m-5 p-3 text-lg bg-white border border-gray-300 rounded-lg shadow-md focus:outline-none focus:border-blue-500"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="all" className="text-gray-500">Alle Categorieën</option>
+          <option value="Technology" className="text-gray-500">Technology</option>
+          <option value="Home" className="text-gray-500">Home</option>
+          {/* Add more options for each category */}
+        </select>
+
+        <input
+          type="text"
+          placeholder="Zoek iconen"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="text-lg"
+        />
+      </div>
+      <div className="md:flex flex-row h-full w-full">
+        <div className="md:w-1/5 w-full">
+          <div className="sidenav pt-4">
+            <div className="container">
+              <label htmlFor="primaryColor"></label>
+              <label htmlFor="primaryColor">
+                {gradient ? "Kies een kleur " : "Kies een kleur "}
+              </label>
+              <input type="color" value={primaryColor} onChange={handlePrimaryColorChange}/>
+              {gradient && (
+                <>
+                  <label htmlFor="secondaryColor">Tweede kleur</label>
+                  <input type="color" value={secondaryColor} onChange={handleSecondaryColorChange} />
+                </>
+              )}
+
+              <label htmlFor="isGradient">Vink voor Verloop aan</label>
+              <input
+                type="checkbox"
+                onChange={() => setGradient(!gradient)}
+                id="isGradient"
+              />
+              <Label className="label" htmlFor={id}>Maat</Label>
+              <Slider
+                value={size}
+                min={20}
+                max={100}
+                id={id}
+                onChange={handleSizeChange}
+                className="slider"
+              />
+
+              <Label className="label" htmlFor={id}>Streekbreedte</Label>
+              <Slider
+                value={swidth}
+                min={1}
+                max={10}
+                id={id}
+                onChange={handleStrokeWidthChange}
+                className="slider"
               />
             </div>
             {/* <div>
